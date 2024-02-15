@@ -3,7 +3,7 @@ pipeline{
   stages{
   	stage('version-control'){
   		steps{
-  			checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-id', url: 'https://github.com/etechDevops/team2-multibuild.git']]])
+  			checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'cicd', url: 'https://github.com/tookiewill33/multi-pipeline.git']])
   		}
   	}
     stage('parallel-job'){
